@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Task 5</title>
+    <style type="text/css">
+        body {
+            text-align: center;
+            font-family: sans-serif;
+        }
+        form {
+            display: flex;
+            margin: auto;
+            justify-content: center;
+        }
+        textarea {
+            resize: vertical;
+            width: 200px;
+            height: 10vh;
+            max-height: 20vh;
+        }
+        .row1 {
+            text-align: right;
+            padding-right: 10px;
+        }
+        .row2 {
+            text-align: left;
+            padding-left: 10px;
+        }
+        span {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>JS Task 5</h1>
+    <form>
+        <table>
+            <tr>
+                <td class="row1"><label for="nameInput">Name:</label></td>
+                <td class="row2">
+                    <input type="text" id="nameInput">
+                    <span id="warning1" hidden>This field is required</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="row1"><label for="emailInput">Email:</label></td>
+                <td class="row2">
+                    <input type="text" id="emailInput">
+                    <span id="warning2" hidden>A valid email address is required</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="row1"><label for="websiteInput">Website:</label></td>
+                <td class="row2">
+                    <input type="text" id="websiteInput">
+                    <span id="warning3" hidden>A valid url is required</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="row1"><label for="messageInput">Message:</label></td>
+                <td class="row2">
+                    <textarea id="messageInput"></textarea>
+                    <span id="warning4" hidden>This field is required</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="row1"></td>
+                <td class="row2"> <button type="submit" id="submit">Submit</button></td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        document.getElementById("submit").addEventListener("click", function(e) {
+            e.preventDefault();
+            var name = document.getElementById("nameInput").value;
+            var email = document.getElementById("emailInput").value;
+            var website = document.getElementById("websiteInput").value;
+            var message = document.getElementById("messageInput").value;
+            if (name == "") {
+                document.getElementById("warning1").removeAttribute("hidden");
+                document.getElementById("nameInput").setAttribute("style", "border-color: red;");
+            }
+            else {
+                document.getElementById("warning1").setAttribute("hidden", "");
+                document.getElementById("nameInput").setAttribute("style", "border-color: black;");
+            }
+            if (email == "") {
+                document.getElementById("warning2").removeAttribute("hidden");
+                document.getElementById("emailInput").setAttribute("style", "border-color: red;");
+            }
+            else {
+                document.getElementById("warning2").setAttribute("hidden", "");
+                document.getElementById("emailInput").setAttribute("style", "border-color: black;");
+            }
+            if (website == "") {
+                document.getElementById("warning3").removeAttribute("hidden");
+                document.getElementById("websiteInput").setAttribute("style", "border-color: red;");
+            }
+            else {
+                document.getElementById("warning3").setAttribute("hidden", "");
+                document.getElementById("websiteInput").setAttribute("style", "border-color: black;");
+            }
+            if (message == "") {
+                document.getElementById("warning4").removeAttribute("hidden");
+                document.getElementById("messageInput").setAttribute("style", "border-color: red;");
+            }
+            else {
+                document.getElementById("warning4").setAttribute("hidden", "");
+                document.getElementById("messageInput").setAttribute("style", "border-color: black;");
+            }
+        });
+    </script>
+</body>
+</html>

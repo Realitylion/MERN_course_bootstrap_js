@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Task 3</title>
+    <style type="text/css">
+        body {
+            text-align: center;
+            color: #64CCC5;
+            font-family: "Lato", sans-serif;
+            background-color: #053B50;
+        }
+        form {
+            margin: auto;
+            width: 20%;
+        }
+    </style>
+</head>
+<body>
+    <h1>JS Task 3</h1>
+    <form>
+        <label for="input1">1st Number:</label>
+        <input type="text" id="input1" placeholder="Enter a number"><br/><br/>
+        <label for="input2">2nd Number:</label>
+        <input type="text" id="input2" placeholder="Enter another number"><br/><br/>
+        <button type="submit" id="multiply">Multiply</button>
+        <button type="submit" id="divide">Divide</button>
+        <br /><br />
+        <p id="output"></p>
+    </form>
+    <script>
+        document.getElementById("multiply").addEventListener("click", function(e) {
+            e.preventDefault();
+            var input1 = document.getElementById("input1").value;
+            var input2 = document.getElementById("input2").value;
+            var product = input1 * input2;
+            document.getElementById("output").innerHTML = "Product is " + product + ".";
+        });
+        document.getElementById("divide").addEventListener("click", function(e) {
+            e.preventDefault();
+            var input1 = document.getElementById("input1").value;
+            var input2 = document.getElementById("input2").value;
+            var quotient = input1 / input2;
+            document.getElementById("output").innerHTML = "Quotient is " + quotient + ".";
+        });
+    </script>
+</body>
+</html>

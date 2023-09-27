@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Task 7</title>
+    <style type="text/css">
+        body {
+            text-align: center;
+            font-family: sans-serif;
+        }
+        form {
+            margin: auto;
+            width: 20%;
+        }
+        .start {
+            left: 225px;
+            transition: left 5s cubic-bezier(0, 0, 1, 1);
+        }
+        .stop {
+            left: -225px;
+        }
+        .train {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <h1>JS Task 7</h1>
+    <img class="train stop" src="https://js.cx/clipart/train.gif">
+    <p style="color: blueviolet;">Click the following buttons to handle the animation</p>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+    <script>
+        document.getElementById("start").addEventListener("click", function(e) {
+            e.preventDefault();
+            document.getElementsByClassName("train")[0].classList.add("start");
+            document.getElementsByClassName("train")[0].classList.remove("stop");
+        });
+        document.getElementById("stop").addEventListener("click", function(e) {
+            e.preventDefault();
+            document.getElementsByClassName("train")[0].classList.remove("start");
+            document.getElementsByClassName("train")[0].classList.add("stop");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Task 1</title>
+    <style type="text/css">
+        body {
+            text-align: center;
+            color: #64CCC5;
+            font-family: "Lato", sans-serif;
+            background-color: #053B50;
+        }
+        form {
+            margin: auto;
+            width: 20%;
+        }
+    </style>
+</head>
+<body>
+    <h1>JS Task 1</h1>
+    <form>
+        <input type="text" id="input1" placeholder="Enter a number">
+        <button type="submit" id="submit">Reverse</button>
+        <p id="output"></p>
+    </form>
+    <script>
+        document.getElementById("submit").addEventListener("click", function(e) {
+            e.preventDefault();
+            var input = document.getElementById("input1").value;
+            var reverse = input.split("").reverse().join("");
+            document.getElementById("output").innerHTML = "Reverse of " + input + " is " + reverse + ".";
+        });
+    </script>
+</body>
+</html>

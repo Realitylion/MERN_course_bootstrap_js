@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Task 8</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap");
+
+        body {
+            color: #64CCC5;
+            text-align: center;
+            font-family: "Lato", sans-serif;
+            background-color: #053B50;
+        }
+        table, td {
+            margin: 0px;
+            padding: 0px;
+        }
+        table {
+            margin: auto;
+            width: 90%;
+        }
+        td {
+            font-family: sans-serif;
+            color: black;
+            padding: 0%;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 100px;
+            max-height: 100px;
+        }
+        .container {
+            background: rgb(170,55,163);
+            background: linear-gradient(0deg, rgba(170,55,163,1) 0%, rgba(255,251,169,1) 100%);
+            position: relative;
+            left: 30%;
+            padding: 2px 0px 10px;
+            width: 40vw;
+        }
+        .blue-text {
+            color: blue;
+        }
+        .bold-text {
+            font-weight: bold;
+        }
+        .full-width {
+            position: relative;
+            top: -0.5px;
+            width: 99.2%;
+            padding: 0%;
+            border-width: 1px 0.5px 1px 0.5px;
+        }
+        .submit-button {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>JS Task 8</h1>
+    <div class="container">
+        <h1 class="blue-text">Registration form</h1>
+        <form>
+            <table cellpadding="0" cellspacing="10">
+                <colgroup>
+                    <col span="1" style="width: 27%; text-align: center;">
+                    <col span="1" style="width: 73%;">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <td class="bold-text" style="text-align: right;">First Name</td>
+                        <td>
+                            <input id="firstname" type="text" name="firstname" class="full-width"/>
+                        </td>  
+                        <td id="firstnamewarning" style="color: red; text-align: left;" hidden>POOR</td>
+                    </tr>
+                    <tr>
+                        <td class="bold-text" style="text-align: right;">Last Name</td>
+                        <td>
+                            <input id="lastname" type="text" name="lastname" class="full-width"/>
+                        </td>
+                        <td id="lastnamewarning" style="color: red; text-align: left;" hidden>POOR</td>
+                    </tr>
+                    <tr>
+                        <td class="bold-text" style="text-align: right;">Email</td>
+                        <td>
+                            <input id="email" type="email" name="email" class="full-width"/>
+                        </td>
+                        <td id="emailwarning" style="color: red; text-align: left;" hidden>POOR</td>
+                    </tr>
+                    <tr>
+                        <td class="bold-text" style="text-align: right;">Password</td>
+                        <td>
+                            <input id="pwd" type="password" name="password" class="full-width"/>
+                        </td>
+                        <td id="passwordwarning" style="color: red; text-align: left;" hidden>POOR</td>
+                    </tr>
+                    <tr>
+                        <td class="bold-text" style="text-align: right;">Re-enter Password</td>
+                        <td>
+                            <input id="confirmpwd" type="password" name="reenter-password" class="full-width"/>
+                        </td>
+                        <td id="confirmpwdwarning" style="color: red; text-align: left;" hidden>POOR OR MISMATCH</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" class="bold-text" style="text-align: right;">Gender:</td>
+                        <td style="text-align: left;">
+                            <input type="radio" name="Gender">Male 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">
+                            <input type="radio" name="Gender">Female
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bold-text" style="text-align: right;">Age:</td>
+                        <td>
+                            <input id="age" type="text" name="age" class="full-width"/>
+                        </td>
+                        <td id="agewarning" style="color: red; text-align: left;" hidden>POOR</td>
+                    </tr>
+                    <tr>
+                        <td class="bold-text" style="text-align: right;">Phone Number</td>
+                        <td>
+                            <input id="phoneno" type="text" name="phone-number" class="full-width"/>
+                        </td>
+                        <td id="phonewarning" style="color: red; text-align: left;" hidden>POOR</td>
+                    </tr>
+                    <tr>
+                        <td class="bold-text" style="text-align: right;">Address</td>
+                        <td>
+                            <textarea id="address" name="address" class="full-width"></textarea>
+                        </td>
+                        <td id="addresswarning" style="color: red; text-align: left;" hidden>POOR</td>
+                    </tr>
+                    <tr>
+                        <td class="bold-text" style="text-align: right;">State</td>
+                        <td>
+                            <input id="state" type="text" name="state" class="full-width"/>
+                        </td>
+                        <td id="statewarning" style="color: red; text-align: left;" hidden>POOR</td>
+                    </tr>
+                    <tr>
+                        <td class="bold-text" style="text-align: right;">Country</td>
+                        <td style="text-align: left;">
+                            <select name="country">
+                                <option value="" disabled selected>Choose your country</option>
+                                <option value="India">India</option>
+                                <option value="USA">USA</option>
+                                <option value="UK">UK</option>
+                                <option value="Australia">Australia</option>
+                                <option value="Canada">Canada</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bold-text" style="text-align: right;">Languages known</td>
+                        <td style="text-align: left;">
+                            <span><input type="checkbox" name="language" value="English" />English</span>
+                            <span><input type="checkbox" name="language" value="Kannada" />Kannada</span>
+                            <span><input type="checkbox" name="language" value="Hindi" />Hindi</span>
+                            <span><input type="checkbox" name="language" value="Telugu" />Telugu</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div style="text-align: left;">
+                                <input type="checkbox" name="declare" />
+                                <label for="declare">
+                                    Hereby I declare that all the given details are true
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: right;">
+                            Login in to <a href="https://ethnus.com/" target="_blank">Ethnus</a> website
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <button id="submit" type="submit" class="submit-button">Register</button>
+        </form>
+    </div>
+    <script>
+        var submitButton = document.getElementById("submit");
+        submitButton.addEventListener("click", (e) => {
+            var flag = true;
+            e.preventDefault();
+            var firstname = document.getElementById("firstname").value;
+            var lastname = document.getElementById("lastname").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("pwd").value;
+            var confirmpassword = document.getElementById("confirmpwd").value;
+            var age = document.getElementById("age").value;
+            var phoneno = document.getElementById("phoneno").value;
+            var address = document.getElementById("address").value;
+            var state = document.getElementById("state").value;
+            
+            if (firstname == "") {
+                document.getElementById("firstnamewarning").hidden = false;
+                flag = false;
+            }
+            else {
+                document.getElementById("firstnamewarning").hidden = true;
+            }
+            if (lastname == "") {
+                document.getElementById("lastnamewarning").hidden = false;
+                flag = false;
+            }
+            else {
+                document.getElementById("lastnamewarning").hidden = true;
+            }
+            if (email == "") {
+                document.getElementById("emailwarning").hidden = false;
+                flag = false;
+            }
+            else {
+                document.getElementById("emailwarning").hidden = true;
+            }
+            if (password == "") {
+                document.getElementById("passwordwarning").hidden = false;
+                flag = false;
+            }
+            else {
+                document.getElementById("passwordwarning").hidden = true;
+            }
+            if (confirmpassword == "" || confirmpassword != password) {
+                document.getElementById("confirmpwdwarning").hidden = false;
+                flag = false;
+            }
+            else {
+                document.getElementById("confirmpwdwarning").hidden = true;
+            }
+            if (age == "") {
+                document.getElementById("agewarning").hidden = false;
+                flag = false;
+            }
+            else {
+                document.getElementById("agewarning").hidden = true;
+            }
+            if (phoneno == "") {
+                document.getElementById("phonewarning").hidden = false;
+                flag = false;
+            }
+            else {
+                document.getElementById("phonewarning").hidden = true;
+            }
+            if (address == "") {
+                document.getElementById("addresswarning").hidden = false;
+                flag = false;
+            }
+            else {
+                document.getElementById("addresswarning").hidden = true;
+            }
+            if (state == "") {
+                document.getElementById("statewarning").hidden = false;
+                flag = false;
+            }
+            else {
+                document.getElementById("statewarning").hidden = true;
+            }
+            if (flag) {
+                alert("Registration Successful");   
+                window.location.reload();
+            }   
+        })
+    </script>
+</body>
